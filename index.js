@@ -41,6 +41,14 @@ for(const btn of allBtn){
     })
 }
 
+function updateTotalCost(price) {
+    const previousTotal = document.getElementById("total-cost").innerText;
+    const convertedTotal = parseInt(previousTotal);
+    const convertedPrice = parseInt(price);
+    const sum = convertedTotal + convertedPrice;
+    document.getElementById("total-cost").innerText = sum;
+}
+
 
 
 function updateBudget(value) {
