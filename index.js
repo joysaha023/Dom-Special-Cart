@@ -49,7 +49,23 @@ function updateTotalCost(price) {
     document.getElementById("total-cost").innerText = sum;
 }
 
-
+function updateGrandTotal(control) {
+    const previousTotal = document.getElementById("total-cost").innerText;
+    const convertedTotal = parseInt(previousTotal);
+    const couponCode = document.getElementById("coupon-code").value;
+    if (control) {
+      if (couponCode == "Hero20") {
+        const discount = convertedTotal * 0.2;
+        document.getElementById("grand-total").innerText =
+          convertedTotal - discount;
+      } else {
+        alert("Invalid Coupon Code No Discount");
+        return;
+      }
+    } else {
+      document.getElementById("grand-total").innerText = convertedTotal;
+    }
+  }
 
 function updateBudget(value) {
     const defaultBudget = document.getElementById("budget").innerText;
